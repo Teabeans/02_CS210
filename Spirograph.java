@@ -18,6 +18,10 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 //import java.time.Duration;
 
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import java.io.File;
+
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -133,6 +137,8 @@ public class Spirograph extends Application {
 		(bgBlue + ((originAxesBlue-bgBlue)*(axesMinorOpacity))/100)
 		);
 
+// mediaPlayer must be declared prior to the actual file assignment, else it gets trash collected after 5-10 seconds
+	static MediaPlayer mediaPlayer;
 
 	public static void main(String[] args) 
 	{
@@ -177,7 +183,6 @@ public class Spirograph extends Application {
 //		drawVelocityLine(gcHUD);
 
 
-
 		root.getChildren().add( sliderPlanetaryTeeth(gcspiro) );
 		root.getChildren().add( sliderPen1Radius(gcspiro) );
 		UI.getChildren().add( checkbox1(gcspiro) );
@@ -186,6 +191,12 @@ public class Spirograph extends Application {
 
 		prepareActionHandlers(theScene);
 
+// Start music - Can be loaded to a submethod call - Requires a mediaPlayer declaration above here
+		String musicFile = "Assets/Maenam.mp3";
+		Media sound = new Media(new File(musicFile).toURI().toString());
+		mediaPlayer = new MediaPlayer(sound);
+		mediaPlayer.play();
+
 
 
 
@@ -193,6 +204,7 @@ public class Spirograph extends Application {
 // Draw refreshing elements FRAMERATE per second
 		new AnimationTimer() {
 			public void handle(long currentNanoTime) {
+
 // Timer background refresh
 				gc.clearRect(0, 0, PANEL_WIDTH, PANEL_HEIGHT); // x, y, w, h
 				frame++;
@@ -274,6 +286,13 @@ public class Spirograph extends Application {
 
 
 
+	static void playMusic() {
+		String musicFile = "Assets/Maenam.mp3";
+		Media sound = new Media(new File(musicFile).toURI().toString());
+		MediaPlayer mediaPlayer = new MediaPlayer(sound);
+		mediaPlayer.play();
+	}
+	
 // Method to adjust a color based on velocities
 	static Color calculateVelocityColor(double deltaXPercent, double deltaYPercent, double velocityPercent) {
 		int R = (int)(deltaXPercent*255); // Red for faster horizontal movement
