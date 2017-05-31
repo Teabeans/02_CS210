@@ -20,7 +20,7 @@ This program emulates a spirograph and illustrates a range of basic JavaFX tools
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+- No test instructions at this time -
 
 ### Break down into end to end tests
 
