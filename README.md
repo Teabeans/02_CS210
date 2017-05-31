@@ -1,12 +1,12 @@
 # Spirograph Simulator
 
-This program emulates a spirograph and illustrates a range of basic JavaFX tools for the creation of graphical content. It is intended for educational purposes.
+This program emulates a spirograph and illustrates a range of basic JavaFX tools for the creation of graphical content. It is intended for educational purposes. Pen size and color are tied to velocities which currently require periodic refreshes to display properly.
 
 ## Getting Started
 
 1) Download the project.
-2) Verify that the 'Assets' folder is in the same folder as Spirograph.java
-3) Run Spirograph.java
+2) Verify that the 'Assets' folder is in the same folder as 'Spirograph.java'
+3) Run 'Spirograph.java'
 4) Use the sliders and buttons to change environment parameters.
 5) Press 'c' to refresh the velocity variables.
 
@@ -60,7 +60,7 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 ## Acknowledgments
 
-* Thanks to Oracle [...]
-* Thanks to Wikipedia [...]
-* Thanks to StackOverflow [...]
-* General thanks [...]
+* Thanks to Oracle for the language and documentation!
+* Thanks to Wikipedia and its users for the wonderful math articles!
+* Thanks to StackOverflow and its users for answers to so many code related questions!
+* General thanks to all the intellects who came before that made this possible!
